@@ -7,20 +7,17 @@
 
 import UIKit
 
-extension RandomJokesViewController {
-    struct ViewModel {
-        let items: [JokeCell.ViewModel]
-    }
-}
-
 class RandomJokesViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
 
-    var viewModel = ViewModel(items: []) {
+    var viewModel = RandomJokesViewModel(items: []) {
         didSet {
             tableView.reloadData()
         }
     }
+
+    var presenter: RandomJokesPresenter!
 
     // MARK: - Lifecycle
 
@@ -28,12 +25,20 @@ class RandomJokesViewController: UIViewController {
         super.viewDidLoad()
 
         prepareUI()
+
+        presenter.attachView(self)
     }
 
     // MARK: - Private
 
     private func prepareUI() {
+        #warning("localize me")
+        navigationItem.title = "Chuck greets you!"
+
         JokeCell.registerCellNib(in: tableView)
+        tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100.0
     }
 }
 
@@ -57,3 +62,14 @@ extension RandomJokesViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - RandomJokesView
+
+extension RandomJokesViewController: RandomJokesView {
+    func didStartLoading() {
+        loadingIndicatorView.startAnimating()
+    }
+
+    func didFinishLoading() {
+        loadingIndicatorView.stopAnimating()
+    }
+}

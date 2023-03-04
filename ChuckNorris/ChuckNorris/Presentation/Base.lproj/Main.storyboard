@@ -11,7 +11,7 @@
         <!--Random Jokes View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RandomJokesViewController" customModule="ChuckNorris" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RandomJokesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="RandomJokesViewController" customModule="ChuckNorris" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,11 +20,17 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-kQ-Alv">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="color" systemColor="systemOrangeColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ytv-kQ-Alv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2lr-c0-i3I"/>
                             <constraint firstAttribute="bottom" secondItem="zSa-1Q-47T" secondAttribute="bottom" id="BQL-CS-f7M"/>
+                            <constraint firstItem="ytv-kQ-Alv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hl4-hD-Tcm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zSa-1Q-47T" secondAttribute="trailing" id="IYC-TX-75G"/>
                             <constraint firstItem="zSa-1Q-47T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ib7-Js-nYs"/>
                             <constraint firstItem="zSa-1Q-47T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wIk-WV-Tae"/>
@@ -32,6 +38,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LmR-6E-ysu"/>
                     <connections>
+                        <outlet property="loadingIndicatorView" destination="ytv-kQ-Alv" id="11A-3y-i0Y"/>
                         <outlet property="tableView" destination="zSa-1Q-47T" id="gwR-rt-zwM"/>
                     </connections>
                 </viewController>
@@ -61,6 +68,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

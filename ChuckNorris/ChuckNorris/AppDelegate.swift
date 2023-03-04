@@ -9,31 +9,34 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+
+    private(set) var appCoordinator: AppCoordinator!
+
     let appAssembly = AppAssembly()
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        appAssembly.dataRepository.searchRandomJokes { result in
-            print(result)
-        }
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.backgroundColor = .white
+        self.window = window
+
+        startApp(with: launchOptions, in: window)
+
+        window.makeKeyAndVisible()
 
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
+    // MARK: - Private
 
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    private func startApp(with launchOptions: [UIApplication.LaunchOptionsKey: Any]?,
+                          in window: UIWindow) {
+        let appAssembly = AppAssembly()
+
+        appCoordinator = AppCoordinator(appAssembly: appAssembly)
+        appCoordinator.start()
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 

@@ -25,3 +25,9 @@ extension DateFormatter {
 extension DateFormatter {
     static let yyyyMMdd = "yyyy-MM-dd'T'HH:mm:ssZ"
 }
+
+extension Date {
+    func toString() -> String? {
+        DateFormatter.defaultFormatter.stringFromDate(self)
+    }
+}

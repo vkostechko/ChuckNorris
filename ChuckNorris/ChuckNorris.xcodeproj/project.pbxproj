@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F3C867229B3606C00A5DAEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C867129B3606C00A5DAEF /* AppDelegate.swift */; };
-		2F3C867429B3606C00A5DAEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C867329B3606C00A5DAEF /* SceneDelegate.swift */; };
 		2F3C867929B3606C00A5DAEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3C867729B3606C00A5DAEF /* Main.storyboard */; };
 		2F3C867B29B3606F00A5DAEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F3C867A29B3606F00A5DAEF /* Assets.xcassets */; };
 		2F3C867E29B3606F00A5DAEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3C867C29B3606F00A5DAEF /* LaunchScreen.storyboard */; };
@@ -42,12 +41,16 @@
 		2F3C86D229B37BA700A5DAEF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3C86D129B37BA700A5DAEF /* SDWebImage */; };
 		2F3C86D429B37E7000A5DAEF /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86D329B37E7000A5DAEF /* UIImage+Utils.swift */; };
 		2F3C86D829B37F1300A5DAEF /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86D729B37F1300A5DAEF /* UIView+Utils.swift */; };
+		2F3C86DA29B37F6600A5DAEF /* RandomJokesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86D929B37F6600A5DAEF /* RandomJokesPresenter.swift */; };
+		2F3C86DC29B37FC300A5DAEF /* RandomJokesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DB29B37FC300A5DAEF /* RandomJokesContract.swift */; };
+		2F3C86DE29B3835400A5DAEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DD29B3835400A5DAEF /* AppCoordinator.swift */; };
+		2F3C86E029B3841C00A5DAEF /* RandomJokesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */; };
+		2F3C86E229B3847000A5DAEF /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86E129B3847000A5DAEF /* AppFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F3C866E29B3606C00A5DAEF /* ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3C867129B3606C00A5DAEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F3C867329B3606C00A5DAEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2F3C867829B3606C00A5DAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F3C867A29B3606F00A5DAEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F3C867D29B3606F00A5DAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +84,11 @@
 		2F3C86CE29B379D400A5DAEF /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
 		2F3C86D329B37E7000A5DAEF /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		2F3C86D729B37F1300A5DAEF /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		2F3C86D929B37F6600A5DAEF /* RandomJokesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesPresenter.swift; sourceTree = "<group>"; };
+		2F3C86DB29B37FC300A5DAEF /* RandomJokesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesContract.swift; sourceTree = "<group>"; };
+		2F3C86DD29B3835400A5DAEF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesBuilder.swift; sourceTree = "<group>"; };
+		2F3C86E129B3847000A5DAEF /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +122,11 @@
 		2F3C867029B3606C00A5DAEF /* ChuckNorris */ = {
 			isa = PBXGroup;
 			children = (
+				2F3C86DD29B3835400A5DAEF /* AppCoordinator.swift */,
 				2F3C869029B362D800A5DAEF /* Assembly */,
 				2F3C86C329B3782400A5DAEF /* Presentation */,
 				2F3C868529B360B600A5DAEF /* Data */,
 				2F3C867129B3606C00A5DAEF /* AppDelegate.swift */,
-				2F3C867329B3606C00A5DAEF /* SceneDelegate.swift */,
-				2F3C867729B3606C00A5DAEF /* Main.storyboard */,
 				2F3C867A29B3606F00A5DAEF /* Assets.xcassets */,
 				2F3C867C29B3606F00A5DAEF /* LaunchScreen.storyboard */,
 				2F3C867F29B3606F00A5DAEF /* Info.plist */,
@@ -247,6 +254,7 @@
 		2F3C86C329B3782400A5DAEF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2F3C867729B3606C00A5DAEF /* Main.storyboard */,
 				2F3C86CC29B379BD00A5DAEF /* Common */,
 				2F3C86C429B3783D00A5DAEF /* RandomJokesList */,
 			);
@@ -256,6 +264,9 @@
 		2F3C86C429B3783D00A5DAEF /* RandomJokesList */ = {
 			isa = PBXGroup;
 			children = (
+				2F3C86DB29B37FC300A5DAEF /* RandomJokesContract.swift */,
+				2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */,
+				2F3C86D929B37F6600A5DAEF /* RandomJokesPresenter.swift */,
 				2F3C86C529B3785B00A5DAEF /* RandomJokesViewController.swift */,
 				2F3C86C829B3798500A5DAEF /* JokeCell.swift */,
 				2F3C86C929B3798500A5DAEF /* JokeCell.xib */,
@@ -266,6 +277,7 @@
 		2F3C86CC29B379BD00A5DAEF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2F3C86E129B3847000A5DAEF /* AppFlow.swift */,
 				2F3C86CD29B379C400A5DAEF /* Utils */,
 			);
 			path = Common;
@@ -365,22 +377,26 @@
 				2F3C869829B364E100A5DAEF /* NetworkConfig.swift in Sources */,
 				2F3C869C29B366E800A5DAEF /* URLResponse+Utils.swift in Sources */,
 				2F3C86AF29B36F8200A5DAEF /* API.swift in Sources */,
+				2F3C86E029B3841C00A5DAEF /* RandomJokesBuilder.swift in Sources */,
 				2F3C86A429B3696100A5DAEF /* DataTransferService.swift in Sources */,
 				2F3C86D429B37E7000A5DAEF /* UIImage+Utils.swift in Sources */,
+				2F3C86E229B3847000A5DAEF /* AppFlow.swift in Sources */,
 				2F3C86A129B368BB00A5DAEF /* Endpoint.swift in Sources */,
 				2F3C867229B3606C00A5DAEF /* AppDelegate.swift in Sources */,
 				2F3C869A29B3654500A5DAEF /* NetworkServiceImpl.swift in Sources */,
 				2F3C86C629B3785B00A5DAEF /* RandomJokesViewController.swift in Sources */,
 				2F3C86B929B371B300A5DAEF /* JokeItem.swift in Sources */,
+				2F3C86DA29B37F6600A5DAEF /* RandomJokesPresenter.swift in Sources */,
 				2F3C868A29B361D900A5DAEF /* NetworkSessionManager.swift in Sources */,
+				2F3C86DC29B37FC300A5DAEF /* RandomJokesContract.swift in Sources */,
 				2F3C86B529B3713200A5DAEF /* SearchRequest.swift in Sources */,
 				2F3C86C229B3734700A5DAEF /* DateFormatter+Utils.swift in Sources */,
 				2F3C86CF29B379D400A5DAEF /* UITableViewCell+Utils.swift in Sources */,
 				2F3C86A629B3698500A5DAEF /* DataTransferError.swift in Sources */,
+				2F3C86DE29B3835400A5DAEF /* AppCoordinator.swift in Sources */,
 				2F3C869429B3630E00A5DAEF /* NetworkService.swift in Sources */,
 				2F3C86A829B36A7500A5DAEF /* JSONResponseDecoder.swift in Sources */,
 				2F3C869629B3636200A5DAEF /* Requestable.swift in Sources */,
-				2F3C867429B3606C00A5DAEF /* SceneDelegate.swift in Sources */,
 				2F3C86D829B37F1300A5DAEF /* UIView+Utils.swift in Sources */,
 				2F3C86CA29B3798500A5DAEF /* JokeCell.swift in Sources */,
 				2F3C869229B362E100A5DAEF /* AppAssembly.swift in Sources */,
