@@ -63,3 +63,13 @@ enum HTTPMethodType: String {
 enum RequestGenerationError: Error {
     case components
 }
+
+protocol ResponseDecoder {
+    func decode<T: Decodable>(_ data: Data) throws -> T
+}
+
+protocol ResponseRequestable: Requestable {
+    associatedtype Response
+
+    var responseDecoder: ResponseDecoder { get }
+}
