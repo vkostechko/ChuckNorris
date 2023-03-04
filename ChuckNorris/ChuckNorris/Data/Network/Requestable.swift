@@ -11,6 +11,7 @@ protocol Requestable {
     var path: String { get }
     var method: HTTPMethodType { get }
     var queryParameters: [String: Any] { get }
+    var queryParametersEncodable: Encodable? { get }
 
     func urlRequest(with networkConfig: NetworkConfigurable) throws -> URLRequest
 }
@@ -34,6 +35,7 @@ extension Requestable {
 
         var urlQueryItems = [URLQueryItem]()
 
+        let queryParameters = try queryParametersEncodable?.toDictionary() ?? self.queryParameters
         queryParameters.forEach {
             urlQueryItems.append(URLQueryItem(name: $0.key, value: "\($0.value)"))
         }
@@ -41,6 +43,7 @@ extension Requestable {
         config.queryParameters.forEach {
             urlQueryItems.append(URLQueryItem(name: $0.key, value: $0.value))
         }
+
         urlComponents.queryItems = !urlQueryItems.isEmpty ? urlQueryItems : nil
 
         guard let url = urlComponents.url else {
@@ -72,4 +75,14 @@ protocol ResponseRequestable: Requestable {
     associatedtype Response
 
     var responseDecoder: ResponseDecoder { get }
+}
+
+// MARK: - Encodable
+
+private extension Encodable {
+    func toDictionary() throws -> [String: Any]? {
+        let data = try JSONEncoder().encode(self)
+        let josnData = try JSONSerialization.jsonObject(with: data)
+        return josnData as? [String: Any]
+    }
 }

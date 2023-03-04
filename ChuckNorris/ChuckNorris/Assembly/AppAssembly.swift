@@ -8,8 +8,12 @@
 import Foundation
 
 final class AppAssembly {
-    private(set) lazy var dataTransferService: DataTransferService = {
-        guard let baseURL = URL(string: "https://api.chucknorris.io/") else {
+    private(set) lazy var dataRepository: DataRepository = {
+        DataRepositoryImpl(network: dataTransferService)
+    }()
+
+    private lazy var dataTransferService: DataTransferService = {
+        guard let baseURL = URL(string: "https://api.chucknorris.io/jokes/") else {
             fatalError("AppAssembly fatal error: can not initialize base url")
         }
 
