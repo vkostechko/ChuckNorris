@@ -6,15 +6,31 @@
 //
 
 import UIKit
+import SDWebImage
 
 extension JokeCell {
     struct ViewModel {
-
+        let joke: String
+        let pictureURL: URL?
+        let date: String?
     }
 }
 
 class JokeCell: UITableViewCell {
-    func update(with joke: JokeCell.ViewModel) {
-        
+    @IBOutlet var pictureImageView: UIImageView!
+    @IBOutlet var jokeLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+
+    func update(with viewModel: JokeCell.ViewModel) {
+        jokeLabel.text = viewModel.joke
+        dateLabel.text = viewModel.date
+        pictureImageView.sd_setImage(with: viewModel.pictureURL,
+                                     placeholderImage: .placeholder)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        pictureImageView.roundCorners()
     }
 }

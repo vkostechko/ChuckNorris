@@ -15,9 +15,49 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuck-norris" translatesAutoresizingMaskIntoConstraints="NO" id="nWq-wA-QDB">
+                        <rect key="frame" x="16" y="16" width="68" height="68"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="nWq-wA-QDB" secondAttribute="height" multiplier="1:1" id="DRA-Ba-Csa"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl4-MK-t3r">
+                        <rect key="frame" x="92" y="15.999999999999998" width="212" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw6-bU-xE1">
+                        <rect key="frame" x="92" y="44.333333333333336" width="212" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="nWq-wA-QDB" secondAttribute="bottom" constant="16" id="9n6-Ph-a8Y"/>
+                    <constraint firstItem="nWq-wA-QDB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Axh-lf-jwa"/>
+                    <constraint firstAttribute="trailing" secondItem="wl4-MK-t3r" secondAttribute="trailing" constant="16" id="L8j-hJ-M30"/>
+                    <constraint firstItem="Bw6-bU-xE1" firstAttribute="trailing" secondItem="wl4-MK-t3r" secondAttribute="trailing" id="Pvr-Q0-V4c"/>
+                    <constraint firstItem="Bw6-bU-xE1" firstAttribute="leading" secondItem="wl4-MK-t3r" secondAttribute="leading" id="Vaj-N9-cZP"/>
+                    <constraint firstItem="wl4-MK-t3r" firstAttribute="top" secondItem="nWq-wA-QDB" secondAttribute="top" id="WrL-O7-eKI"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bw6-bU-xE1" secondAttribute="bottom" constant="16" id="cnJ-ux-d3p"/>
+                    <constraint firstItem="Bw6-bU-xE1" firstAttribute="top" secondItem="wl4-MK-t3r" secondAttribute="bottom" constant="8" id="gkP-pY-H5k"/>
+                    <constraint firstItem="nWq-wA-QDB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="kOT-NI-WYm"/>
+                    <constraint firstItem="wl4-MK-t3r" firstAttribute="leading" secondItem="nWq-wA-QDB" secondAttribute="trailing" constant="8" id="nsr-Eh-SMR"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-52" y="20"/>
+            <connections>
+                <outlet property="dateLabel" destination="Bw6-bU-xE1" id="akl-ub-cOr"/>
+                <outlet property="jokeLabel" destination="wl4-MK-t3r" id="ARs-zJ-v23"/>
+                <outlet property="pictureImageView" destination="nWq-wA-QDB" id="Tpp-ly-Stx"/>
+            </connections>
+            <point key="canvasLocation" x="-53.435114503816791" y="19.718309859154932"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="chuck-norris" width="120" height="120"/>
+    </resources>
 </document>
