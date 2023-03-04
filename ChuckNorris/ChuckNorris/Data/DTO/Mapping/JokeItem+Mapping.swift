@@ -14,8 +14,8 @@ extension JokeItemDTO {
                  joke: value,
                  iconURL: URL(string: iconURL),
                  url: URL(string: url),
-                 creationDate: DateFormatter.defaultFormatter.date(from: creationDate),
-                 updateDate: DateFormatter.defaultFormatter.date(from: updateDate))
+                 creationDate: DateFormatter.serverFormatter.date(from: creationDate),
+                 updateDate: DateFormatter.serverFormatter.date(from: updateDate))
     }
 }
 

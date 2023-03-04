@@ -20,8 +20,8 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-kQ-Alv">
-                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-kQ-Alv">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                                 <color key="color" systemColor="systemOrangeColor"/>
                             </activityIndicatorView>
                         </subviews>

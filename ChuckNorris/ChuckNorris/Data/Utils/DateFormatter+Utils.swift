@@ -8,9 +8,15 @@
 import Foundation
 
 extension DateFormatter {
-    static var defaultFormatter: DateFormatter {
+    static var serverFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = DateFormatter.yyyyMMdd
+        dateFormatter.dateFormat = DateFormatter.server
+        return dateFormatter
+    }
+
+    static var presentationFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = DateFormatter.yyyyMMddHHmm
         return dateFormatter
     }
 }
@@ -23,11 +29,12 @@ extension DateFormatter {
 }
 
 extension DateFormatter {
-    static let yyyyMMdd = "yyyy-MM-dd'T'HH:mm:ssZ"
+    static let server = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+    static let yyyyMMddHHmm = "yyyy MM dd HH:mm"
 }
 
 extension Date {
     func toString() -> String? {
-        DateFormatter.defaultFormatter.stringFromDate(self)
+        DateFormatter.presentationFormatter.stringFromDate(self)
     }
 }
