@@ -8,15 +8,15 @@
 import Foundation
 
 final class AppAssembly {
-    let networkServie: NetworkService
-
-    init() {
+    private(set) lazy var dataTransferService: DataTransferService = {
         guard let baseURL = URL(string: "https://api.chucknorris.io/") else {
             fatalError("AppAssembly fatal error: can not initialize base url")
         }
 
         let config = NetworkConfig(baseURL: baseURL)
-        self.networkServie = NetworkServiceImpl(config: config,
-                                                sessionManager: URLNetworkSessionManager())
-    }
+        let networkServie = NetworkServiceImpl(config: config,
+                                               sessionManager: URLNetworkSessionManager())
+
+        return DataTransferServiceImpl(with: networkServie)
+    }()
 }
