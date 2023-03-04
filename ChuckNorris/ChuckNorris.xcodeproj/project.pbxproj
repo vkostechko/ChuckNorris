@@ -39,6 +39,7 @@
 		2F3C86CA29B3798500A5DAEF /* JokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86C829B3798500A5DAEF /* JokeCell.swift */; };
 		2F3C86CB29B3798500A5DAEF /* JokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3C86C929B3798500A5DAEF /* JokeCell.xib */; };
 		2F3C86CF29B379D400A5DAEF /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86CE29B379D400A5DAEF /* UITableViewCell+Utils.swift */; };
+		2F3C86D229B37BA700A5DAEF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3C86D129B37BA700A5DAEF /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3C86D229B37BA700A5DAEF /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +291,9 @@
 			dependencies = (
 			);
 			name = ChuckNorris;
+			packageProductDependencies = (
+				2F3C86D129B37BA700A5DAEF /* SDWebImage */,
+			);
 			productName = ChuckNorris;
 			productReference = 2F3C866E29B3606C00A5DAEF /* ChuckNorris.app */;
 			productType = "com.apple.product-type.application";
@@ -317,6 +322,9 @@
 				Base,
 			);
 			mainGroup = 2F3C866529B3606C00A5DAEF;
+			packageReferences = (
+				2F3C86D029B37BA700A5DAEF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 2F3C866F29B3606C00A5DAEF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -590,6 +598,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F3C86D029B37BA700A5DAEF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F3C86D129B37BA700A5DAEF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F3C86D029B37BA700A5DAEF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2F3C866629B3606C00A5DAEF /* Project object */;
 }
