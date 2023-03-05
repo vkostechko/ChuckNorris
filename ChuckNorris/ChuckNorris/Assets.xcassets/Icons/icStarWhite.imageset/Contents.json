@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "starWhitу.png",
+      "filename" : "star.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "starWhite@2x.png",
+      "filename" : "star@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "starWhite@3x.png",
+      "filename" : "star@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
