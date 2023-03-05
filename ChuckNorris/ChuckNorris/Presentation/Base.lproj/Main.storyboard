@@ -36,9 +36,16 @@
                             <constraint firstItem="zSa-1Q-47T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wIk-WV-Tae"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LmR-6E-ysu"/>
+                    <navigationItem key="navigationItem" id="LmR-6E-ysu">
+                        <barButtonItem key="rightBarButtonItem" image="icStarWhite" id="Qoz-oY-hV9">
+                            <connections>
+                                <action selector="modeButtonDidTap:" destination="BYZ-38-t0r" id="3WA-hZ-Z69"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loadingIndicatorView" destination="ytv-kQ-Alv" id="11A-3y-i0Y"/>
+                        <outlet property="modeButton" destination="Qoz-oY-hV9" id="Lgm-kh-Xvd"/>
                         <outlet property="tableView" destination="zSa-1Q-47T" id="gwR-rt-zwM"/>
                     </connections>
                 </viewController>
@@ -66,6 +73,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icStarWhite" width="42.666667938232422" height="42.666667938232422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

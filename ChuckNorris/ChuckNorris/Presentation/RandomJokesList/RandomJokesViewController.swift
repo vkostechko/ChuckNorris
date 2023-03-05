@@ -10,11 +10,13 @@ import UIKit
 class RandomJokesViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var modeButton: UIBarButtonItem!
 
-    var viewModel = RandomJokesViewModel(items: []) {
+    var viewModel = RandomJokesViewModel(mode: .defaultMode, items: []) {
         didSet {
-            guard oldValue != viewModel else { return }
-            tableView.reloadData()
+            if oldValue != viewModel {
+                updateUI()
+            }
         }
     }
 
@@ -30,6 +32,12 @@ class RandomJokesViewController: UIViewController {
         presenter.attachView(self)
     }
 
+    // MARK: - Actions
+
+    @IBAction private func modeButtonDidTap(_ sender: Any) {
+        presenter.toggleSourceMode()
+    }
+
     // MARK: - Private
 
     private func prepareUI() {
@@ -40,6 +48,11 @@ class RandomJokesViewController: UIViewController {
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100.0
+    }
+
+    private func updateUI() {
+        tableView.reloadData()
+        modeButton.image = viewModel.mode.icon
     }
 }
 

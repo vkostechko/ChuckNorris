@@ -13,6 +13,7 @@ final class RandomJokesPresenterImpl {
 
     private var favoriteJokes: [JokeItem] = []
     private var allJokes: [JokeItem] = []
+    private var mode: SourceMode = .defaultMode
 
     init(repository: DataRepository) {
         self.repository = repository
@@ -39,6 +40,11 @@ extension RandomJokesPresenterImpl: RandomJokesPresenter {
         if let item = allJokes.first(where: { $0.id == jokeId }) {
             addToFavorites(joke: item)
         }
+    }
+
+    func toggleSourceMode() {
+        mode.toggle()
+        updateViewModel()
     }
 }
 
@@ -108,9 +114,18 @@ private extension RandomJokesPresenterImpl {
     }
 
     func updateViewModel() {
-        let favoriteIDs = self.favoriteJokes.map { $0.id }
-        let vms = allJokes.mapToJokeCellViewModels(favoriteIDs: favoriteIDs)
-        view?.viewModel = RandomJokesViewModel(items: vms)
+        let favoriteIDs = favoriteJokes.map { $0.id }
+        let vms: [JokeCell.ViewModel]
+
+        switch mode {
+        case .all:
+            vms = allJokes.mapToJokeCellViewModels(favoriteIDs: favoriteIDs)
+
+        case .favorite:
+            vms = favoriteJokes.mapToJokeCellViewModels(favoriteIDs: favoriteIDs)
+        }
+        
+        view?.viewModel = RandomJokesViewModel(mode: mode, items: vms)
     }
 }
 
