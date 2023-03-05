@@ -11,6 +11,7 @@ class RandomJokesViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var modeButton: UIBarButtonItem!
+    @IBOutlet private weak var searchBar: UISearchBar!
 
     var viewModel = RandomJokesViewModel(mode: .defaultMode, items: []) {
         didSet {
@@ -48,8 +49,10 @@ class RandomJokesViewController: UIViewController {
 
         JokeCell.registerCellNib(in: tableView)
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100.0
+        tableView.keyboardDismissMode = .onDrag
     }
 
     private func updateUI() {
@@ -79,10 +82,33 @@ extension RandomJokesViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+
+extension RandomJokesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        // TODO: implement navigation to details
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension RandomJokesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.search(term: searchText)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+}
+
 // MARK: - RandomJokesView
 
 extension RandomJokesViewController: RandomJokesView {
     func didStartLoading() {
+        guard viewModel.items.isEmpty else { return }
+
         loadingIndicatorView.startAnimating()
     }
 

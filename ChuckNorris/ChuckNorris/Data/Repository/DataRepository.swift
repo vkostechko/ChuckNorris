@@ -10,7 +10,9 @@ import Foundation
 protocol DataRepository {
     func fetchFavorites(completion: @escaping AsyncCompletion<[JokeItem]>)
 
-    func searchRandomJokes(completion: @escaping AsyncCompletion<[JokeItem]>)
+    @discardableResult
+    func search(term: String,
+                completion: @escaping AsyncCompletion<[JokeItem]>) -> Cancellable?
 
     func removeFromFavorites(jokeId: String, completion: @escaping AsyncCompletion<Void>)
     func addToFavorites(joke: JokeItem, completion: @escaping AsyncCompletion<Void>)
@@ -42,8 +44,10 @@ extension DataRepositoryImpl: DataRepository {
         }
     }
 
-    func searchRandomJokes(completion: @escaping AsyncCompletion<[JokeItem]>) {
-        network.request(with: API.search(request: SearchRequest(query: "peace"))) { result in
+    @discardableResult
+    func search(term: String,
+                completion: @escaping AsyncCompletion<[JokeItem]>) -> Cancellable? {
+        network.request(with: API.search(request: SearchRequest(query: term))) { result in
             switch result {
             case .success(let response):
                 let jokes = response.jokes.mapToDomain()

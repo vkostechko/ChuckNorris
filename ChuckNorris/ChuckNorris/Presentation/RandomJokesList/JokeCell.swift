@@ -37,6 +37,14 @@ class JokeCell: UITableViewCell {
 
     // MARK: - Lifecycle
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        let bckView = UIView()
+        bckView.backgroundColor = UIColor.cnGold.withAlphaComponent(0.3)
+        self.selectedBackgroundView = bckView
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
 

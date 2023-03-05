@@ -10,6 +10,7 @@ import UIKit
 protocol RandomJokesPresenter {
     func attachView(_ view: RandomJokesView)
 
+    func search(term: String)
     func toggleFavoriteStatus(jokeId: String)
     func toggleSourceMode()
 }

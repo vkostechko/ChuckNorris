@@ -15,6 +15,9 @@ final class RandomJokesPresenterImpl {
     private var allJokes: [JokeItem] = []
     private var mode: SourceMode = .defaultMode
 
+    private var lastSearchTerm: String?
+    private var searchOperation: Cancellable?
+
     init(repository: DataRepository) {
         self.repository = repository
     }
@@ -27,6 +30,21 @@ extension RandomJokesPresenterImpl: RandomJokesPresenter {
         self.view = view
 
         fetchData()
+    }
+
+    func search(term: String) {
+        guard lastSearchTerm != term else { return }
+        guard !term.isEmpty else {
+            allJokes = favoriteJokes
+            updateViewModel()
+            return
+        }
+        guard term.count >= 3 && term.count <= 120 else {
+            return
+        }
+
+        lastSearchTerm = term
+        doSearch(term: term)
     }
 
     func toggleFavoriteStatus(jokeId: String) {
@@ -57,14 +75,20 @@ private extension RandomJokesPresenterImpl {
 
             if case .success(let jokes) = result {
                 self.favoriteJokes = jokes
+                self.allJokes = jokes
+                self.updateViewModel()
             }
 
-            self.doSearch()
+            self.view?.didFinishLoading()
         }
     }
 
-    func doSearch() {
-        repository.searchRandomJokes { [weak self] result in
+    func doSearch(term: String) {
+        searchOperation?.cancel()
+
+        view?.didStartLoading()
+
+        searchOperation = repository.search(term: term) { [weak self] result in
             guard let self else { return }
 
             defer { self.view?.didFinishLoading() }
@@ -72,12 +96,14 @@ private extension RandomJokesPresenterImpl {
             switch result {
             case .success(let jokes):
                 self.allJokes = jokes
-                self.updateViewModel()
 
             case .failure(let error):
                 print(error.localizedDescription)
                 #warning("handle error")
+                self.allJokes = []
             }
+
+            self.updateViewModel()
         }
     }
 
