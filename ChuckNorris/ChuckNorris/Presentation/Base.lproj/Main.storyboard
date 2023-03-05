@@ -73,7 +73,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icStarWhite" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="icStarWhite" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

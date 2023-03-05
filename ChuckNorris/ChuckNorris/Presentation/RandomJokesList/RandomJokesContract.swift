@@ -36,10 +36,10 @@ enum SourceMode: Equatable {
     var icon: UIImage? {
         switch self {
         case .all:
-            return UIImage(named: "icStarWhite")
+            return UIImage(named: "icStarWhite")?.withRenderingMode(.alwaysOriginal)
 
         case .favorite:
-            return UIImage(named: "icStarGold")
+            return UIImage(named: "icStarGold")?.withRenderingMode(.alwaysOriginal)
         }
     }
 

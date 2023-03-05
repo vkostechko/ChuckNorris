@@ -44,6 +44,8 @@ class RandomJokesViewController: UIViewController {
         #warning("localize me")
         navigationItem.title = "Chuck greets you!"
 
+        modeButton.image = viewModel.mode.icon
+
         JokeCell.registerCellNib(in: tableView)
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
