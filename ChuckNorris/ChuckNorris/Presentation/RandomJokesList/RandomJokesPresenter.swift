@@ -43,6 +43,7 @@ extension RandomJokesPresenterImpl: RandomJokesPresenter {
             return
         }
 
+        mode = .all
         lastSearchTerm = term
         doSearch(term: term)
     }
@@ -62,6 +63,12 @@ extension RandomJokesPresenterImpl: RandomJokesPresenter {
 
     func toggleSourceMode() {
         mode.toggle()
+
+        allJokes = favoriteJokes
+
+        lastSearchTerm = nil
+        searchOperation?.cancel()
+
         updateViewModel()
     }
 }

@@ -36,6 +36,8 @@ class RandomJokesViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction private func modeButtonDidTap(_ sender: Any) {
+        searchBar.text = ""
+        view.endEditing(true)
         presenter.toggleSourceMode()
     }
 
