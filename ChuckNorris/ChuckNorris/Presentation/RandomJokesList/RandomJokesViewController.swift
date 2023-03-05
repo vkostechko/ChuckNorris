@@ -13,6 +13,7 @@ class RandomJokesViewController: UIViewController {
 
     var viewModel = RandomJokesViewModel(items: []) {
         didSet {
+            guard oldValue != viewModel else { return }
             tableView.reloadData()
         }
     }

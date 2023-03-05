@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 extension JokeCell {
-    struct ViewModel {
+    struct ViewModel: Equatable {
         let id: String
         let joke: String
         let pictureURL: URL?

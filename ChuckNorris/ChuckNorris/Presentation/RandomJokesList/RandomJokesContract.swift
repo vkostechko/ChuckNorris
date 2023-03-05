@@ -21,6 +21,6 @@ protocol RandomJokesView: UIViewController {
     func didFinishLoading()
 }
 
-struct RandomJokesViewModel {
+struct RandomJokesViewModel: Equatable {
     let items: [JokeCell.ViewModel]
 }
