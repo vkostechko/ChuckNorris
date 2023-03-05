@@ -20,8 +20,8 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-kQ-Alv">
-                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ytv-kQ-Alv">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                                 <color key="color" systemColor="systemOrangeColor"/>
                             </activityIndicatorView>
                         </subviews>
@@ -36,9 +36,16 @@
                             <constraint firstItem="zSa-1Q-47T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wIk-WV-Tae"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LmR-6E-ysu"/>
+                    <navigationItem key="navigationItem" id="LmR-6E-ysu">
+                        <barButtonItem key="rightBarButtonItem" image="icStarWhite" id="Qoz-oY-hV9">
+                            <connections>
+                                <action selector="modeButtonDidTap:" destination="BYZ-38-t0r" id="3WA-hZ-Z69"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loadingIndicatorView" destination="ytv-kQ-Alv" id="11A-3y-i0Y"/>
+                        <outlet property="modeButton" destination="Qoz-oY-hV9" id="Lgm-kh-Xvd"/>
                         <outlet property="tableView" destination="zSa-1Q-47T" id="gwR-rt-zwM"/>
                     </connections>
                 </viewController>
@@ -66,6 +73,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icStarWhite" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

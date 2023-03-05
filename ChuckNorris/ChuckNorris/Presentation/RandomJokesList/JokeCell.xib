@@ -24,28 +24,41 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl4-MK-t3r">
-                        <rect key="frame" x="74" y="15.999999999999998" width="230" height="20.333333333333329"/>
+                        <rect key="frame" x="74" y="16" width="230" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw6-bU-xE1">
-                        <rect key="frame" x="74" y="44.333333333333336" width="230" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <rect key="frame" x="74" y="59" width="37.333333333333343" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wP3-qX-dZe">
+                        <rect key="frame" x="272" y="52" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="wP3-qX-dZe" secondAttribute="height" multiplier="1:1" id="2UI-Jl-RYx"/>
+                            <constraint firstAttribute="height" constant="32" id="iP5-yY-Iwq"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="icStarWhite"/>
+                        <connections>
+                            <action selector="favoriteButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wxs-0e-UYE"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="wl4-MK-t3r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="2K2-np-Q7c"/>
+                    <constraint firstAttribute="bottom" secondItem="wP3-qX-dZe" secondAttribute="bottom" constant="16" id="2Y0-ep-Bt0"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nWq-wA-QDB" secondAttribute="bottom" constant="16" id="9n6-Ph-a8Y"/>
                     <constraint firstItem="nWq-wA-QDB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Axh-lf-jwa"/>
+                    <constraint firstAttribute="trailing" secondItem="wP3-qX-dZe" secondAttribute="trailing" constant="16" id="HF2-gM-bGG"/>
                     <constraint firstAttribute="trailing" secondItem="wl4-MK-t3r" secondAttribute="trailing" constant="16" id="L8j-hJ-M30"/>
                     <constraint firstItem="nWq-wA-QDB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OxE-Lh-JiI"/>
-                    <constraint firstItem="Bw6-bU-xE1" firstAttribute="trailing" secondItem="wl4-MK-t3r" secondAttribute="trailing" id="Pvr-Q0-V4c"/>
                     <constraint firstItem="Bw6-bU-xE1" firstAttribute="leading" secondItem="wl4-MK-t3r" secondAttribute="leading" id="Vaj-N9-cZP"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bw6-bU-xE1" secondAttribute="bottom" constant="16" id="cnJ-ux-d3p"/>
-                    <constraint firstItem="Bw6-bU-xE1" firstAttribute="top" secondItem="wl4-MK-t3r" secondAttribute="bottom" constant="8" id="gkP-pY-H5k"/>
+                    <constraint firstItem="wP3-qX-dZe" firstAttribute="top" secondItem="wl4-MK-t3r" secondAttribute="bottom" constant="4" id="VmV-Yd-FXl"/>
+                    <constraint firstItem="Bw6-bU-xE1" firstAttribute="centerY" secondItem="wP3-qX-dZe" secondAttribute="centerY" id="i92-7r-gW9"/>
                     <constraint firstItem="nWq-wA-QDB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="kOT-NI-WYm"/>
                     <constraint firstItem="wl4-MK-t3r" firstAttribute="leading" secondItem="nWq-wA-QDB" secondAttribute="trailing" constant="8" id="nsr-Eh-SMR"/>
                 </constraints>
@@ -53,6 +66,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="Bw6-bU-xE1" id="akl-ub-cOr"/>
+                <outlet property="favoriteButton" destination="wP3-qX-dZe" id="S5W-tb-SA0"/>
                 <outlet property="jokeLabel" destination="wl4-MK-t3r" id="ARs-zJ-v23"/>
                 <outlet property="pictureImageView" destination="nWq-wA-QDB" id="Tpp-ly-Stx"/>
             </connections>
@@ -61,5 +75,6 @@
     </objects>
     <resources>
         <image name="chuck-norris" width="120" height="120"/>
+        <image name="icStarWhite" width="42.666667938232422" height="42.666667938232422"/>
     </resources>
 </document>

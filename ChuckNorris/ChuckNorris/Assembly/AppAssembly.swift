@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import GRDB
 
 final class AppAssembly {
     private(set) lazy var dataRepository: DataRepository = {
-        DataRepositoryImpl(network: dataTransferService)
+        DataRepositoryImpl(network: dataTransferService,
+                           storage: JokesStorageImpl(dbQueue: database))
     }()
 
     private lazy var dataTransferService: DataTransferService = {
@@ -23,4 +25,18 @@ final class AppAssembly {
 
         return DataTransferServiceImpl(with: networkServie)
     }()
+
+    private let database: DatabaseQueue
+
+    init() {
+        let db = AppDatabase()
+        do {
+            let queue = try db.openDatabase()
+            self.database = queue
+        } catch {
+            #warning("handle error, show alert or something user friendly")
+            print("Init AppDatabse failed: \(error.localizedDescription)")
+            fatalError()
+        }
+    }
 }

@@ -46,6 +46,11 @@
 		2F3C86DE29B3835400A5DAEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DD29B3835400A5DAEF /* AppCoordinator.swift */; };
 		2F3C86E029B3841C00A5DAEF /* RandomJokesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */; };
 		2F3C86E229B3847000A5DAEF /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86E129B3847000A5DAEF /* AppFlow.swift */; };
+		2F3C86E529B406A000A5DAEF /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3C86E429B406A000A5DAEF /* GRDB */; };
+		2F3C86E829B406C100A5DAEF /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86E729B406C100A5DAEF /* AppDatabase.swift */; };
+		2F3C86EB29B4074600A5DAEF /* JokeItemRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86EA29B4074600A5DAEF /* JokeItemRecord.swift */; };
+		2F3C86ED29B40AB100A5DAEF /* JokesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86EC29B40AB100A5DAEF /* JokesStorage.swift */; };
+		2F3C86EF29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86EE29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +94,10 @@
 		2F3C86DD29B3835400A5DAEF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesBuilder.swift; sourceTree = "<group>"; };
 		2F3C86E129B3847000A5DAEF /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		2F3C86E729B406C100A5DAEF /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		2F3C86EA29B4074600A5DAEF /* JokeItemRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeItemRecord.swift; sourceTree = "<group>"; };
+		2F3C86EC29B40AB100A5DAEF /* JokesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesStorage.swift; sourceTree = "<group>"; };
+		2F3C86EE29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JokeItemRecord+Mapping.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F3C86D229B37BA700A5DAEF /* SDWebImage in Frameworks */,
+				2F3C86E529B406A000A5DAEF /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +152,7 @@
 				2F3C86BA29B371EF00A5DAEF /* DTO */,
 				2F3C86A229B3694C00A5DAEF /* DataTransfer */,
 				2F3C868629B360D400A5DAEF /* Network */,
+				2F3C86E629B406AF00A5DAEF /* Storage */,
 				2F3C86C029B3734000A5DAEF /* Utils */,
 			);
 			path = Data;
@@ -293,6 +304,25 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		2F3C86E629B406AF00A5DAEF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				2F3C86E729B406C100A5DAEF /* AppDatabase.swift */,
+				2F3C86E929B4073500A5DAEF /* JokesStorage */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		2F3C86E929B4073500A5DAEF /* JokesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				2F3C86EC29B40AB100A5DAEF /* JokesStorage.swift */,
+				2F3C86EA29B4074600A5DAEF /* JokeItemRecord.swift */,
+				2F3C86EE29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift */,
+			);
+			path = JokesStorage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,6 +341,7 @@
 			name = ChuckNorris;
 			packageProductDependencies = (
 				2F3C86D129B37BA700A5DAEF /* SDWebImage */,
+				2F3C86E429B406A000A5DAEF /* GRDB */,
 			);
 			productName = ChuckNorris;
 			productReference = 2F3C866E29B3606C00A5DAEF /* ChuckNorris.app */;
@@ -342,6 +373,7 @@
 			mainGroup = 2F3C866529B3606C00A5DAEF;
 			packageReferences = (
 				2F3C86D029B37BA700A5DAEF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				2F3C86E329B406A000A5DAEF /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = 2F3C866F29B3606C00A5DAEF /* Products */;
 			projectDirPath = "";
@@ -389,19 +421,23 @@
 				2F3C86DA29B37F6600A5DAEF /* RandomJokesPresenter.swift in Sources */,
 				2F3C868A29B361D900A5DAEF /* NetworkSessionManager.swift in Sources */,
 				2F3C86DC29B37FC300A5DAEF /* RandomJokesContract.swift in Sources */,
+				2F3C86EB29B4074600A5DAEF /* JokeItemRecord.swift in Sources */,
 				2F3C86B529B3713200A5DAEF /* SearchRequest.swift in Sources */,
 				2F3C86C229B3734700A5DAEF /* DateFormatter+Utils.swift in Sources */,
 				2F3C86CF29B379D400A5DAEF /* UITableViewCell+Utils.swift in Sources */,
 				2F3C86A629B3698500A5DAEF /* DataTransferError.swift in Sources */,
 				2F3C86DE29B3835400A5DAEF /* AppCoordinator.swift in Sources */,
 				2F3C869429B3630E00A5DAEF /* NetworkService.swift in Sources */,
+				2F3C86E829B406C100A5DAEF /* AppDatabase.swift in Sources */,
 				2F3C86A829B36A7500A5DAEF /* JSONResponseDecoder.swift in Sources */,
 				2F3C869629B3636200A5DAEF /* Requestable.swift in Sources */,
 				2F3C86D829B37F1300A5DAEF /* UIView+Utils.swift in Sources */,
+				2F3C86EF29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift in Sources */,
 				2F3C86CA29B3798500A5DAEF /* JokeCell.swift in Sources */,
 				2F3C869229B362E100A5DAEF /* AppAssembly.swift in Sources */,
 				2F3C86AB29B36E6500A5DAEF /* DataRepository.swift in Sources */,
 				2F3C86BE29B372B900A5DAEF /* JokeItemDTO.swift in Sources */,
+				2F3C86ED29B40AB100A5DAEF /* JokesStorage.swift in Sources */,
 				2F3C86AD29B36F3700A5DAEF /* AsyncResult.swift in Sources */,
 				2F3C868829B3616F00A5DAEF /* URLNetworkSessionManager.swift in Sources */,
 				2F3C868F29B3627400A5DAEF /* URLSessionDataTask+Utils.swift in Sources */,
@@ -632,6 +668,14 @@
 				version = 5.9.5;
 			};
 		};
+		2F3C86E329B406A000A5DAEF /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.6.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -639,6 +683,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F3C86D029B37BA700A5DAEF /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		2F3C86E429B406A000A5DAEF /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F3C86E329B406A000A5DAEF /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
