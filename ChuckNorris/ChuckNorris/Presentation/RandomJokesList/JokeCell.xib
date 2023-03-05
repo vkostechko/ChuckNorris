@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,6 +42,7 @@
                             <constraint firstAttribute="width" secondItem="wP3-qX-dZe" secondAttribute="height" multiplier="1:1" id="2UI-Jl-RYx"/>
                             <constraint firstAttribute="height" constant="32" id="iP5-yY-Iwq"/>
                         </constraints>
+                        <color key="tintColor" name="AccentColor"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="icStarWhite"/>
                         <connections>
@@ -75,6 +77,9 @@
     </objects>
     <resources>
         <image name="chuck-norris" width="120" height="120"/>
-        <image name="icStarWhite" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="icStarWhite" width="21.333333969116211" height="21.333333969116211"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.83099997043609619" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
