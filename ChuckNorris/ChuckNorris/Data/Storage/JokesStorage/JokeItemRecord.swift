@@ -12,10 +12,10 @@ struct JokeItemRecord: Codable {
     let id: String
     let categories: String
     let value: String
-    let iconURL: String
-    let url: String
-    let creationDate: String
-    let updateDate: String
+    let iconURL: String?
+    let url: String?
+    let creationDate: String?
+    let updateDate: String?
 }
 
 extension JokeItemRecord: TableRecord {

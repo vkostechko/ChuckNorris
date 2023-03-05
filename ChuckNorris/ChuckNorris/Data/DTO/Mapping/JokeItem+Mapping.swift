@@ -7,15 +7,27 @@
 
 import Foundation
 
+extension JokeItem {
+    func toDTO() -> JokeItemDTO {
+        JokeItemDTO(id: id,
+                    categories: categories,
+                    value: joke,
+                    iconURL: iconURL?.absoluteString,
+                    url: url?.absoluteString,
+                    creationDate: creationDate?.toString(),
+                    updateDate: updateDate?.toString())
+    }
+}
+
 extension JokeItemDTO {
     func toDomain() -> JokeItem {
         JokeItem(id: id,
                  categories: categories,
                  joke: value,
-                 iconURL: URL(string: iconURL),
-                 url: URL(string: url),
-                 creationDate: DateFormatter.serverFormatter.date(from: creationDate),
-                 updateDate: DateFormatter.serverFormatter.date(from: updateDate))
+                 iconURL: URL(string: iconURL ?? ""),
+                 url: URL(string: url ?? ""),
+                 creationDate: DateFormatter.serverFormatter.date(from: creationDate ?? ""),
+                 updateDate: DateFormatter.serverFormatter.date(from: updateDate ?? ""))
     }
 }
 

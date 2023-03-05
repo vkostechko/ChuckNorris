@@ -63,10 +63,10 @@ struct AppDatabase {
                 t.column(JokeItemRecord.Columns.id.name, .text).notNull().primaryKey()
                 t.column(JokeItemRecord.Columns.categories.name, .text).notNull()
                 t.column(JokeItemRecord.Columns.value.name, .text).notNull()
-                t.column(JokeItemRecord.Columns.iconURL.name, .text).notNull()
-                t.column(JokeItemRecord.Columns.url.name, .text).notNull()
-                t.column(JokeItemRecord.Columns.creationDate.name, .text).notNull()
-                t.column(JokeItemRecord.Columns.updateDate.name, .text).notNull()
+                t.column(JokeItemRecord.Columns.iconURL.name, .text)
+                t.column(JokeItemRecord.Columns.url.name, .text)
+                t.column(JokeItemRecord.Columns.creationDate.name, .text)
+                t.column(JokeItemRecord.Columns.updateDate.name, .text)
             }
         }
 

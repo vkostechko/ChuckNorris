@@ -10,6 +10,7 @@ import SDWebImage
 
 extension JokeCell {
     struct ViewModel {
+        let id: String
         let joke: String
         let pictureURL: URL?
         let isFavorite: Bool

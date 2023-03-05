@@ -11,9 +11,8 @@ import GRDB
 protocol JokesStorage {
     func fetchFavoriteJokes(completion: @escaping AsyncCompletion<[JokeItemDTO]>)
 
-    func isJokeFavorite(id: String) -> Bool
-    func favorite(joke: JokeItemDTO)
-    func unfavorite(joke: JokeItemDTO)
+    func favorite(joke: JokeItemDTO, completion: @escaping AsyncCompletion<Void>)
+    func removeFromfavorites(jokeId: String, completion: @escaping AsyncCompletion<Void>)
 }
 
 final class JokesStorageImpl {
@@ -37,45 +36,40 @@ extension JokesStorageImpl: JokesStorage {
                     completion(.success(jokes))
                 }
             } catch {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
+                print("fetch favorite jokes error: \(error.localizedDescription)")
+                DispatchQueue.main.async { completion(.failure(error)) }
             }
         }
     }
 
-    func isJokeFavorite(id: String) -> Bool {
-        let result = try? dbQueue.read { db in
-            do {
-                return try JokeItemRecord
-                    .filter(JokeItemRecord.Columns.id == id)
-                    .isEmpty(db)
-            } catch {
-                print("isJokeFavorite error: \(error.localizedDescription)")
-                return false
-            }
-        }
-        return result ?? false
-    }
-
-    func favorite(joke: JokeItemDTO) {
+    func favorite(joke: JokeItemDTO, completion: @escaping AsyncCompletion<Void>) {
         dbQueue.asyncWrite { db in
             try joke.toRecord().save(db)
         } completion: { _, result in
-            if case .failure(let error) = result {
+            switch result {
+            case .success:
+                DispatchQueue.main.async { completion(.success(())) }
+
+            case .failure(let error):
                 print("favorite joke error: \(error.localizedDescription)")
+                DispatchQueue.main.async { completion(.failure(error)) }
             }
         }
     }
 
-    func unfavorite(joke: JokeItemDTO) {
+    func removeFromfavorites(jokeId: String, completion: @escaping AsyncCompletion<Void>) {
         dbQueue.asyncWrite { db in
             try JokeItemRecord
-                .filter(JokeItemRecord.Columns.id == joke.id)
+                .filter(JokeItemRecord.Columns.id == jokeId)
                 .deleteAll(db)
         } completion: { _, result in
-            if case .failure(let error) = result {
-                print("favorite joke error: \(error.localizedDescription)")
+            switch result {
+            case .success:
+                DispatchQueue.main.async { completion(.success(())) }
+
+            case .failure(let error):
+                print("unfavorite joke error: \(error.localizedDescription)")
+                DispatchQueue.main.async { completion(.failure(error)) }
             }
         }
     }
