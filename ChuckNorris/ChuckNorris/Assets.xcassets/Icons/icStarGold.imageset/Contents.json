@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "starGold.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
