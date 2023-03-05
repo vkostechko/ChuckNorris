@@ -8,9 +8,9 @@
 import UIKit
 
 enum AppFlow {
-    static func ramdomJokesView() -> RandomJokesView {
+    static func ramdomJokesView() -> JokesView {
         #warning("Add R.swift to avoid force type casting")
         return UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "RandomJokesViewController") as! RandomJokesView
+            .instantiateViewController(withIdentifier: "JokesViewController") as! JokesView
     }
 }

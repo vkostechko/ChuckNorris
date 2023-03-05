@@ -1,5 +1,5 @@
 //
-//  RandomJokesViewController.swift
+//  JokesViewController.swift
 //  ChuckNorris
 //
 //  Created by Viachaslau Kastsechka on 3/4/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RandomJokesViewController: UIViewController {
+class JokesViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingIndicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var modeButton: UIBarButtonItem!
@@ -21,7 +21,7 @@ class RandomJokesViewController: UIViewController {
         }
     }
 
-    var presenter: RandomJokesPresenter!
+    var presenter: JokesPresenter!
 
     // MARK: - Lifecycle
 
@@ -65,7 +65,7 @@ class RandomJokesViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension RandomJokesViewController: UITableViewDataSource {
+extension JokesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.items.count
     }
@@ -86,7 +86,7 @@ extension RandomJokesViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension RandomJokesViewController: UITableViewDelegate {
+extension JokesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         // TODO: implement navigation to details
@@ -95,7 +95,7 @@ extension RandomJokesViewController: UITableViewDelegate {
 
 // MARK: - UISearchBarDelegate
 
-extension RandomJokesViewController: UISearchBarDelegate {
+extension JokesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter.search(term: searchText)
     }
@@ -105,9 +105,9 @@ extension RandomJokesViewController: UISearchBarDelegate {
     }
 }
 
-// MARK: - RandomJokesView
+// MARK: - JokesView
 
-extension RandomJokesViewController: RandomJokesView {
+extension JokesViewController: JokesView {
     func didStartLoading() {
         guard viewModel.items.isEmpty else { return }
 
@@ -121,7 +121,7 @@ extension RandomJokesViewController: RandomJokesView {
 
 // MARK: - JokeCellDelegate
 
-extension RandomJokesViewController: JokeCellDelegate {
+extension JokesViewController: JokeCellDelegate {
     func jokeCell(_ cell: JokeCell, didTapFavoriteButton: UIButton) {
         guard let ip = tableView.indexPath(for: cell) else { return }
 

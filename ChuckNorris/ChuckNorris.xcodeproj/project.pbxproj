@@ -34,17 +34,17 @@
 		2F3C86BC29B3721400A5DAEF /* JokeItem+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86BB29B3721400A5DAEF /* JokeItem+Mapping.swift */; };
 		2F3C86BE29B372B900A5DAEF /* JokeItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86BD29B372B900A5DAEF /* JokeItemDTO.swift */; };
 		2F3C86C229B3734700A5DAEF /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86C129B3734700A5DAEF /* DateFormatter+Utils.swift */; };
-		2F3C86C629B3785B00A5DAEF /* RandomJokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86C529B3785B00A5DAEF /* RandomJokesViewController.swift */; };
+		2F3C86C629B3785B00A5DAEF /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86C529B3785B00A5DAEF /* JokesViewController.swift */; };
 		2F3C86CA29B3798500A5DAEF /* JokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86C829B3798500A5DAEF /* JokeCell.swift */; };
 		2F3C86CB29B3798500A5DAEF /* JokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3C86C929B3798500A5DAEF /* JokeCell.xib */; };
 		2F3C86CF29B379D400A5DAEF /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86CE29B379D400A5DAEF /* UITableViewCell+Utils.swift */; };
 		2F3C86D229B37BA700A5DAEF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3C86D129B37BA700A5DAEF /* SDWebImage */; };
 		2F3C86D429B37E7000A5DAEF /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86D329B37E7000A5DAEF /* UIImage+Utils.swift */; };
 		2F3C86D829B37F1300A5DAEF /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86D729B37F1300A5DAEF /* UIView+Utils.swift */; };
-		2F3C86DA29B37F6600A5DAEF /* RandomJokesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86D929B37F6600A5DAEF /* RandomJokesPresenter.swift */; };
-		2F3C86DC29B37FC300A5DAEF /* RandomJokesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DB29B37FC300A5DAEF /* RandomJokesContract.swift */; };
+		2F3C86DA29B37F6600A5DAEF /* JokesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86D929B37F6600A5DAEF /* JokesPresenter.swift */; };
+		2F3C86DC29B37FC300A5DAEF /* JokesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DB29B37FC300A5DAEF /* JokesContract.swift */; };
 		2F3C86DE29B3835400A5DAEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DD29B3835400A5DAEF /* AppCoordinator.swift */; };
-		2F3C86E029B3841C00A5DAEF /* RandomJokesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */; };
+		2F3C86E029B3841C00A5DAEF /* JokesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86DF29B3841C00A5DAEF /* JokesBuilder.swift */; };
 		2F3C86E229B3847000A5DAEF /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86E129B3847000A5DAEF /* AppFlow.swift */; };
 		2F3C86E529B406A000A5DAEF /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3C86E429B406A000A5DAEF /* GRDB */; };
 		2F3C86E829B406C100A5DAEF /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86E729B406C100A5DAEF /* AppDatabase.swift */; };
@@ -84,16 +84,16 @@
 		2F3C86BB29B3721400A5DAEF /* JokeItem+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JokeItem+Mapping.swift"; sourceTree = "<group>"; };
 		2F3C86BD29B372B900A5DAEF /* JokeItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeItemDTO.swift; sourceTree = "<group>"; };
 		2F3C86C129B3734700A5DAEF /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
-		2F3C86C529B3785B00A5DAEF /* RandomJokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesViewController.swift; sourceTree = "<group>"; };
+		2F3C86C529B3785B00A5DAEF /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
 		2F3C86C829B3798500A5DAEF /* JokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeCell.swift; sourceTree = "<group>"; };
 		2F3C86C929B3798500A5DAEF /* JokeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JokeCell.xib; sourceTree = "<group>"; };
 		2F3C86CE29B379D400A5DAEF /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
 		2F3C86D329B37E7000A5DAEF /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		2F3C86D729B37F1300A5DAEF /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
-		2F3C86D929B37F6600A5DAEF /* RandomJokesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesPresenter.swift; sourceTree = "<group>"; };
-		2F3C86DB29B37FC300A5DAEF /* RandomJokesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesContract.swift; sourceTree = "<group>"; };
+		2F3C86D929B37F6600A5DAEF /* JokesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesPresenter.swift; sourceTree = "<group>"; };
+		2F3C86DB29B37FC300A5DAEF /* JokesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesContract.swift; sourceTree = "<group>"; };
 		2F3C86DD29B3835400A5DAEF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokesBuilder.swift; sourceTree = "<group>"; };
+		2F3C86DF29B3841C00A5DAEF /* JokesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesBuilder.swift; sourceTree = "<group>"; };
 		2F3C86E129B3847000A5DAEF /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		2F3C86E729B406C100A5DAEF /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		2F3C86EA29B4074600A5DAEF /* JokeItemRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeItemRecord.swift; sourceTree = "<group>"; };
@@ -277,10 +277,10 @@
 		2F3C86C429B3783D00A5DAEF /* RandomJokesList */ = {
 			isa = PBXGroup;
 			children = (
-				2F3C86DB29B37FC300A5DAEF /* RandomJokesContract.swift */,
-				2F3C86DF29B3841C00A5DAEF /* RandomJokesBuilder.swift */,
-				2F3C86D929B37F6600A5DAEF /* RandomJokesPresenter.swift */,
-				2F3C86C529B3785B00A5DAEF /* RandomJokesViewController.swift */,
+				2F3C86DB29B37FC300A5DAEF /* JokesContract.swift */,
+				2F3C86DF29B3841C00A5DAEF /* JokesBuilder.swift */,
+				2F3C86D929B37F6600A5DAEF /* JokesPresenter.swift */,
+				2F3C86C529B3785B00A5DAEF /* JokesViewController.swift */,
 				2F3C86C829B3798500A5DAEF /* JokeCell.swift */,
 				2F3C86C929B3798500A5DAEF /* JokeCell.xib */,
 			);
@@ -412,18 +412,18 @@
 				2F3C869829B364E100A5DAEF /* NetworkConfig.swift in Sources */,
 				2F3C869C29B366E800A5DAEF /* URLResponse+Utils.swift in Sources */,
 				2F3C86AF29B36F8200A5DAEF /* API.swift in Sources */,
-				2F3C86E029B3841C00A5DAEF /* RandomJokesBuilder.swift in Sources */,
+				2F3C86E029B3841C00A5DAEF /* JokesBuilder.swift in Sources */,
 				2F3C86A429B3696100A5DAEF /* DataTransferService.swift in Sources */,
 				2F3C86D429B37E7000A5DAEF /* UIImage+Utils.swift in Sources */,
 				2F3C86E229B3847000A5DAEF /* AppFlow.swift in Sources */,
 				2F3C86A129B368BB00A5DAEF /* Endpoint.swift in Sources */,
 				2F3C867229B3606C00A5DAEF /* AppDelegate.swift in Sources */,
 				2F3C869A29B3654500A5DAEF /* NetworkServiceImpl.swift in Sources */,
-				2F3C86C629B3785B00A5DAEF /* RandomJokesViewController.swift in Sources */,
+				2F3C86C629B3785B00A5DAEF /* JokesViewController.swift in Sources */,
 				2F3C86B929B371B300A5DAEF /* JokeItem.swift in Sources */,
-				2F3C86DA29B37F6600A5DAEF /* RandomJokesPresenter.swift in Sources */,
+				2F3C86DA29B37F6600A5DAEF /* JokesPresenter.swift in Sources */,
 				2F3C868A29B361D900A5DAEF /* NetworkSessionManager.swift in Sources */,
-				2F3C86DC29B37FC300A5DAEF /* RandomJokesContract.swift in Sources */,
+				2F3C86DC29B37FC300A5DAEF /* JokesContract.swift in Sources */,
 				2F3C86EB29B4074600A5DAEF /* JokeItemRecord.swift in Sources */,
 				2F3C86B529B3713200A5DAEF /* SearchRequest.swift in Sources */,
 				2F3C86C229B3734700A5DAEF /* DateFormatter+Utils.swift in Sources */,

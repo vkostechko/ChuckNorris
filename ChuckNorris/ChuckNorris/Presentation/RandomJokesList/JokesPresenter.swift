@@ -1,5 +1,5 @@
 //
-//  RandomJokesPresenter.swift
+//  JokesPresenter.swift
 //  ChuckNorris
 //
 //  Created by Viachaslau Kastsechka on 3/4/23.
@@ -8,7 +8,7 @@
 import Foundation
 
 final class RandomJokesPresenterImpl {
-    private weak var view: RandomJokesView?
+    private weak var view: JokesView?
     private let repository: DataRepository
 
     private var favoriteJokes: [JokeItem] = []
@@ -23,10 +23,10 @@ final class RandomJokesPresenterImpl {
     }
 }
 
-// MARK: - RandomJokesPresenter
+// MARK: - JokesPresenter
 
-extension RandomJokesPresenterImpl: RandomJokesPresenter {
-    func attachView(_ view: RandomJokesView) {
+extension RandomJokesPresenterImpl: JokesPresenter {
+    func attachView(_ view: JokesView) {
         self.view = view
 
         fetchData()

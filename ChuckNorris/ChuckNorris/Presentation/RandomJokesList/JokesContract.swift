@@ -1,5 +1,5 @@
 //
-//  RandomJokesContract.swift
+//  JokesContract.swift
 //  ChuckNorris
 //
 //  Created by Viachaslau Kastsechka on 3/4/23.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol RandomJokesPresenter {
-    func attachView(_ view: RandomJokesView)
+protocol JokesPresenter {
+    func attachView(_ view: JokesView)
 
     func search(term: String)
     func toggleFavoriteStatus(jokeId: String)
     func toggleSourceMode()
 }
 
-protocol RandomJokesView: UIViewController {
-    var presenter: RandomJokesPresenter! { get set }
+protocol JokesView: UIViewController {
+    var presenter: JokesPresenter! { get set }
     var viewModel: RandomJokesViewModel { get set }
 
     func didStartLoading()

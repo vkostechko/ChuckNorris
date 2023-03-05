@@ -15,7 +15,7 @@ final class AppCoordinator {
     }
 
     func start() {
-        let view = RandomJokesBuilder(dataRepository: appAssembly.dataRepository)
+        let view = JokesBuilder(dataRepository: appAssembly.dataRepository)
             .configure()
         let navController = UINavigationController(rootViewController: view)
         (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = navController
