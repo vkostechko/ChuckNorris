@@ -58,6 +58,7 @@ extension RandomJokesViewController: UITableViewDataSource {
             fatalError("can not initialize cell at index path: \(indexPath)")
         }
         cell.update(with: viewModel.items[indexPath.row])
+        cell.delegate = self
         return cell
     }
 }
@@ -71,5 +72,16 @@ extension RandomJokesViewController: RandomJokesView {
 
     func didFinishLoading() {
         loadingIndicatorView.stopAnimating()
+    }
+}
+
+// MARK: - JokeCellDelegate
+
+extension RandomJokesViewController: JokeCellDelegate {
+    func jokeCell(_ cell: JokeCell, didTapFavoriteButton: UIButton) {
+        guard let ip = tableView.indexPath(for: cell) else { return }
+
+        let joke = viewModel.items[ip.row]
+//        presenter.toggleFavoriteStatus(joke: joke)
     }
 }

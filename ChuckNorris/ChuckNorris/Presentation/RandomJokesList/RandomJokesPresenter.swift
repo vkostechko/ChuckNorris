@@ -24,6 +24,10 @@ extension RandomJokesPresenterImpl: RandomJokesPresenter {
 
         fetchData()
     }
+
+    func toggleFavoriteStatus(joke: JokeItem) {
+        print("toggleFavoriteStatus")
+    }
 }
 
 private extension RandomJokesPresenterImpl {
@@ -53,6 +57,7 @@ private extension Array where Element == JokeItem {
         map {
             JokeCell.ViewModel(joke: $0.joke,
                                pictureURL: $0.iconURL,
+                               isFavorite: false,
                                date: $0.updateDate?.toString())
         }
     }

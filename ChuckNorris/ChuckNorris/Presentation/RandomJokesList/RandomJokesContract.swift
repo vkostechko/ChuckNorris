@@ -9,6 +9,8 @@ import UIKit
 
 protocol RandomJokesPresenter {
     func attachView(_ view: RandomJokesView)
+
+    func toggleFavoriteStatus(joke: JokeItem)
 }
 
 protocol RandomJokesView: UIViewController {

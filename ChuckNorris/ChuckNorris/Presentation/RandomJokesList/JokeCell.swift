@@ -12,25 +12,51 @@ extension JokeCell {
     struct ViewModel {
         let joke: String
         let pictureURL: URL?
+        let isFavorite: Bool
         let date: String?
+
+        var favoriteIcon: UIImage? {
+            let name = isFavorite ? "icStarGold" : "icStarWhite"
+            return UIImage(named: name)
+        }
     }
 }
 
-class JokeCell: UITableViewCell {
-    @IBOutlet var pictureImageView: UIImageView!
-    @IBOutlet var jokeLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
+protocol JokeCellDelegate: AnyObject {
+    func jokeCell(_ cell: JokeCell, didTapFavoriteButton: UIButton)
+}
 
-    func update(with viewModel: JokeCell.ViewModel) {
-        jokeLabel.text = viewModel.joke
-        dateLabel.text = viewModel.date
-        pictureImageView.sd_setImage(with: viewModel.pictureURL,
-                                     placeholderImage: .placeholder)
-    }
+class JokeCell: UITableViewCell {
+    @IBOutlet private var pictureImageView: UIImageView!
+    @IBOutlet private var jokeLabel: UILabel!
+    @IBOutlet private var dateLabel: UILabel!
+    @IBOutlet private var favoriteButton: UIButton!
+
+    weak var delegate: JokeCellDelegate?
+
+    // MARK: - Lifecycle
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
         pictureImageView.roundCorners()
+    }
+
+    // MARK: - Actions
+
+    @IBAction private func favoriteButtonDidTap(_ sender: Any) {
+        delegate?.jokeCell(self, didTapFavoriteButton: favoriteButton)
+    }
+
+    // MARK: - Public
+
+    func update(with viewModel: JokeCell.ViewModel) {
+        jokeLabel.text = viewModel.joke
+        dateLabel.text = viewModel.date
+
+        favoriteButton.setImage(viewModel.favoriteIcon, for: .normal)
+
+        pictureImageView.sd_setImage(with: viewModel.pictureURL,
+                                     placeholderImage: .placeholder)
     }
 }

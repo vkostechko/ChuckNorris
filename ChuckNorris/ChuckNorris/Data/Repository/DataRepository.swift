@@ -13,9 +13,11 @@ protocol DataRepository {
 
 final class DataRepositoryImpl {
     let network: DataTransferService
+    let storage: JokesStorage
 
-    init(network: DataTransferService) {
+    init(network: DataTransferService, storage: JokesStorage) {
         self.network = network
+        self.storage = storage
     }
 }
 

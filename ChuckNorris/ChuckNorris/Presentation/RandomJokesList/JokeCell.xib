@@ -43,6 +43,9 @@
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="icStarWhite"/>
+                        <connections>
+                            <action selector="favoriteButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wxs-0e-UYE"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -63,6 +66,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="Bw6-bU-xE1" id="akl-ub-cOr"/>
+                <outlet property="favoriteButton" destination="wP3-qX-dZe" id="S5W-tb-SA0"/>
                 <outlet property="jokeLabel" destination="wl4-MK-t3r" id="ARs-zJ-v23"/>
                 <outlet property="pictureImageView" destination="nWq-wA-QDB" id="Tpp-ly-Stx"/>
             </connections>
