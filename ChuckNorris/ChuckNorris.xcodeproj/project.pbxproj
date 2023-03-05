@@ -51,6 +51,7 @@
 		2F3C86EB29B4074600A5DAEF /* JokeItemRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86EA29B4074600A5DAEF /* JokeItemRecord.swift */; };
 		2F3C86ED29B40AB100A5DAEF /* JokesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86EC29B40AB100A5DAEF /* JokesStorage.swift */; };
 		2F3C86EF29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86EE29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift */; };
+		2F3C86F129B42FC900A5DAEF /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C86F029B42FC900A5DAEF /* UIColor+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		2F3C86EA29B4074600A5DAEF /* JokeItemRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeItemRecord.swift; sourceTree = "<group>"; };
 		2F3C86EC29B40AB100A5DAEF /* JokesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesStorage.swift; sourceTree = "<group>"; };
 		2F3C86EE29B40D5D00A5DAEF /* JokeItemRecord+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JokeItemRecord+Mapping.swift"; sourceTree = "<group>"; };
+		2F3C86F029B42FC900A5DAEF /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				2F3C86CE29B379D400A5DAEF /* UITableViewCell+Utils.swift */,
 				2F3C86D329B37E7000A5DAEF /* UIImage+Utils.swift */,
 				2F3C86D729B37F1300A5DAEF /* UIView+Utils.swift */,
+				2F3C86F029B42FC900A5DAEF /* UIColor+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				2F3C86CF29B379D400A5DAEF /* UITableViewCell+Utils.swift in Sources */,
 				2F3C86A629B3698500A5DAEF /* DataTransferError.swift in Sources */,
 				2F3C86DE29B3835400A5DAEF /* AppCoordinator.swift in Sources */,
+				2F3C86F129B42FC900A5DAEF /* UIColor+Utils.swift in Sources */,
 				2F3C869429B3630E00A5DAEF /* NetworkService.swift in Sources */,
 				2F3C86E829B406C100A5DAEF /* AppDatabase.swift in Sources */,
 				2F3C86A829B36A7500A5DAEF /* JSONResponseDecoder.swift in Sources */,
