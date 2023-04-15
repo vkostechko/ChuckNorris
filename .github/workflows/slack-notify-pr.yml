@@ -1,11 +1,24 @@
 name: Slack Pull Request Open Notification
 
-on:
-  pull_request:
-    types: [opened, reopened]
+on: push
+  # pull_request:
+    # types: [opened, reopened]
 
 jobs:
   notify_slack_push:
+    - name: Slack Notification
+      uses: 
+        rtCamp/action-slack-notify@v2
+        kceb/pull-request-url-action@v1
+      env:
+        SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL_ID }}
+        SLACK_COLOR: '#219C61' # or a specific color like 'good' or '#ff00ff'
+        SLACK_ICON: https://avatars.slack-edge.com/2023-04-15/5115416243299_e9253a4c78315c21df1b_192.png?size=48
+        SLACK_MESSAGE: pr-url  # 'A new pull request has been created'
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+
+
     name: Notify Slack on pushes
     runs-on: ubuntu-latest
     steps:
