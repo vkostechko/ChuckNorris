@@ -17,8 +17,6 @@ jobs:
         SLACK_MESSAGE: pr-url  # 'A new pull request has been created'
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
-
-
     # name: Notify Slack on pushes
     # runs-on: ubuntu-latest
     # steps:
