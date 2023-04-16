@@ -9,14 +9,8 @@ jobs:
     steps:
       - name: Notify Slack
         uses: rtCamp/action-slack-notify@v2.0.0
-        with:
-          args: |
-            {
-              "webhook_url": "${{ secrets.SLACK_WEBHOOK }}",
-              "message": "New pull request created: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}",
-              "channel": ${{ secrets.SLACK_CHANNEL_ID }},
-              "username": "GitHub Bot",
-              "icon_emoji": ":rocket:"
-            }
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_ICON_EMOJI: ":rocket:"
+          SLACK_MESSAGE: "New pull request created: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_COLOR: '#219C61' # or a specific color like 'good'
