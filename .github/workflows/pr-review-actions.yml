@@ -2,7 +2,9 @@ name: PR review
 
 on:
   pull_request_review:
-    types: [review_requested, submitted]
+    types: [submitted]
+  pull_request:
+    types: [review_requested]
 
 jobs:
   review_requested:
