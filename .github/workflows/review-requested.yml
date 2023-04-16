@@ -5,13 +5,25 @@ on:
     types: [submitted]
 
 jobs:
-  review_requested:
+  approved:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: ":rocket: A pull request review requested: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
-          SLACK_COLOR: "#C3996B" # or a specific color like 'good'
+          SLACK_MESSAGE: ":rocket: The pull request review has been approved: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_COLOR: "#219C61" # or a specific color like 'good'
+          MSG_MINIMAL: "true"
+
+  review_changes_requested:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ":rocket: The pull request review has been approved: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_COLOR: "#E24965" # or a specific color like 'good'
           MSG_MINIMAL: "true"
