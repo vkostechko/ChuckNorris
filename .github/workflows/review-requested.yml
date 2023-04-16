@@ -24,6 +24,6 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: ":rocket: The pull request review has been approved: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_MESSAGE: ":skull_and_crossbones: Requested changes for pull request: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
           SLACK_COLOR: "#E24965" # or a specific color like 'good'
           MSG_MINIMAL: "true"
