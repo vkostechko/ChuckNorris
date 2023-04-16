@@ -1,8 +1,11 @@
 name: PR review
 
 on:
+  pull_request_review:
   pull_request:
     types: [review_requested, submitted]
+  issue_comment:
+    types: [created]
 
 jobs:
   review_requested:
@@ -18,7 +21,8 @@ jobs:
           MSG_MINIMAL: "true"
 
   approved:
-    if: github.event.review.state == 'approved'
+    if: ${{ github.event_name == 'pull_request' && github.event.review.state == 'approved' }}
+    # if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
@@ -30,7 +34,8 @@ jobs:
           MSG_MINIMAL: "true"
 
   review_changes_requested:
-    if: github.event.review.state == 'changes_requested'
+    if: ${{ github.event_name == 'pull_request' && github.event.review.state == 'changes_requested' }}
+    # if: github.event.review.state == 'changes_requested'
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
