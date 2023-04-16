@@ -5,10 +5,6 @@ on:
     types: [review_requested]
   pull_request:
     types: [submitted]
-  issue_comment:
-    types: [created]
-    issue:
-      pull_request:
 
 jobs:
   review_requested:
@@ -47,6 +43,7 @@ jobs:
           MSG_MINIMAL: "true"
 
   pr_comment:
+    if: github.event.review.state == 'commented'
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
