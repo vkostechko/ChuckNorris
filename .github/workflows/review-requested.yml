@@ -1,11 +1,11 @@
 name: PR review requested
 
 on:
-  pull_request_review_requested:
-    types: [review_requested]
+  pull_request_review:
+    types: [submitted]
 
 jobs:
-  pr_review_requested:
+  review_requested:
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
