@@ -3,7 +3,7 @@ name: PR review
 on:
   pull_request_review:
   pull_request:
-    types: [review_requested, submitted]
+    types: [review_requested, submitted, closed]
 
 jobs:
   review_requested:
@@ -20,7 +20,6 @@ jobs:
 
   approved:
     if: ${{ github.event_name == 'pull_request_review' && github.event.review.state == 'approved' }}
-    # if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
@@ -31,9 +30,20 @@ jobs:
           SLACK_COLOR: "#219C61" # or a specific color like 'good'
           MSG_MINIMAL: "true"
 
+  merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ":ghost: The pull request review has been merged: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_COLOR: "#E8F5F0" # or a specific color like 'good'
+          MSG_MINIMAL: "true"
+
   review_changes_requested:
     if: ${{ github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested' }}
-    # if: github.event.review.state == 'changes_requested'
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
@@ -46,7 +56,6 @@ jobs:
 
   pr_comment:
     if: ${{ github.event_name == 'pull_request_review' && github.event.review.state == 'commented' }}
-    # if: github.event.review.state == 'commented'
     runs-on: ubuntu-latest
     steps:
       - name: Notify Slack
