@@ -15,7 +15,7 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: ":pray: A pull request review was requested: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
-          SLACK_COLOR: "#C3996B" # or a specific color like 'good'
+          SLACK_COLOR: "#E8F5F0" # or a specific color like 'good'
           MSG_MINIMAL: "true"
 
   approved:
@@ -39,7 +39,7 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: ":ghost: The pull request review has been merged: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
-          SLACK_COLOR: "#E8F5F0" # or a specific color like 'good'
+          SLACK_COLOR: "#C3996B" # or a specific color like 'good'
           MSG_MINIMAL: "true"
 
   review_changes_requested:
