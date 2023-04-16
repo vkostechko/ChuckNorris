@@ -13,4 +13,4 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: ":rocket: New pull request created: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
           SLACK_COLOR: "219C61" # or a specific color like 'good'
-          MSG_SHORT: 1
+          MSG_MINIMAL: "true"
