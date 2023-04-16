@@ -19,7 +19,7 @@ jobs:
           MSG_MINIMAL: "true"
 
   approved:
-    if: ${{ github.event_name == 'pull_request' && github.event.review.state == 'approved' }}
+    if: ${{ github.event_name == 'pull_request_review' && github.event.review.state == 'approved' }}
     # if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
@@ -45,7 +45,7 @@ jobs:
           MSG_MINIMAL: "true"
 
   pr_comment:
-    if: ${{ github.event_name == 'pull_request_review_comment' }}
+    if: ${{ github.event_name == 'pull_request_review' && github.event.review.state == 'commented' }}
     # if: github.event.review.state == 'commented'
     runs-on: ubuntu-latest
     steps:
