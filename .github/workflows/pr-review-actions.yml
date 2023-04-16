@@ -2,9 +2,8 @@ name: PR review
 
 on:
   pull_request_review:
-    types: [submitted]
   pull_request:
-    types: [review_requested]
+    types: [review_requested, submitted]
 
 jobs:
   review_requested:
@@ -14,7 +13,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: ":folded_hands: A pull request review was requested: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_MESSAGE: ":pray: A pull request review was requested: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
           SLACK_COLOR: "#C3996B" # or a specific color like 'good'
           MSG_MINIMAL: "true"
 
