@@ -2,8 +2,13 @@ name: PR review
 
 on:
   pull_request_review:
+    types: [review_requested]
   pull_request:
-    types: [review_requested, submitted]
+    types: [submitted]
+  issue_comment:
+    types: [created]
+    issue:
+      pull_request:
 
 jobs:
   review_requested:
@@ -39,4 +44,15 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: ":skull_and_crossbones: Requested changes for pull request: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
           SLACK_COLOR: "#E24965" # or a specific color like 'good'
+          MSG_MINIMAL: "true"
+
+  pr_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ":speak_no_evil: A comment has been added to a pull request: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_COLOR: "#DADCDD" # or a specific color like 'good'
           MSG_MINIMAL: "true"
