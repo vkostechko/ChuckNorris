@@ -1,13 +1,8 @@
 name: Notify Slack on Pull Request Created
 
 on:
-  pull_request_review:
-    types: [submitted]
   pull_request:
-    types: [closed]
-# on:
-#   pull_request:
-#     types: [opened, reopened]
+    types: [opened, approved]
 
 jobs:
   pr_opened:
