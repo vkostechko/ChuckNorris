@@ -4,7 +4,7 @@ on:
   pull_request_review:
   pull_request:
   issue_comment:
-    types: [review_requested, submittedб created]
+    types: [review_requested, submitted, created]
 
 jobs:
   review_requested:
