@@ -1,15 +1,15 @@
 name: Slack Pull Request Open Notification
 
-on: push
+on:
+  push
   # pull_request:
-    # types: [opened, reopened]
+  #   types: [opened, reopened]
 
 jobs:
   notify_slack_push:
     - name: Slack Notification
       uses: 
         rtCamp/action-slack-notify@v2
-        kceb/pull-request-url-action@v1
       env:
         SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL_ID }}
         SLACK_COLOR: '#219C61' # or a specific color like 'good' or '#ff00ff'
