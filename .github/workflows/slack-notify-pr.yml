@@ -13,7 +13,7 @@ jobs:
           args: |
             {
               "webhook_url": "${{ secrets.SLACK_WEBHOOK }}",
-              "text": "New pull request created: ${{ github.event.pull_request.html_url }}",
+              "message": "New pull request created: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}",
               "channel": ${{ secrets.SLACK_CHANNEL_ID }},
               "username": "GitHub Bot",
               "icon_emoji": ":rocket:"
