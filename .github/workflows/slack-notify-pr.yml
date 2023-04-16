@@ -1,0 +1,35 @@
+name: Notify Slack on Pull Request Created
+
+on:
+  pull_request_review:
+    types: [submitted]
+  pull_request:
+    types: [closed]
+# on:
+#   pull_request:
+#     types: [opened, reopened]
+
+jobs:
+  pr_opened:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request_review' && github.event.review.state == 'opened'
+    steps:
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ":rocket: New pull request created: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_COLOR: "#C3996B" # or a specific color like 'good'
+          MSG_MINIMAL: "true"
+
+  pr_approved:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+    steps:
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ":rocket: New pull request created: ${{ github.event.repository.html_url }}/pull/${{ github.event.pull_request.number }}"
+          SLACK_COLOR: "#219C61" # or a specific color like 'good'
+          MSG_MINIMAL: "true"
